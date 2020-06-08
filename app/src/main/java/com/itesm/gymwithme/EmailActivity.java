@@ -21,6 +21,7 @@ public class EmailActivity extends AppCompatActivity {
         mEmail = (EditText)findViewById(R.id.mailID);
         mMessage = (EditText)findViewById(R.id.messageID);
         mSubject = (EditText)findViewById(R.id.subjectID);
+        EmailActivity.this.setTitle("Contact");
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
