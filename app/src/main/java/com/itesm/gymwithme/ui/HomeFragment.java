@@ -54,6 +54,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        cardViewConnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_nav_home_to_emailActivity);
+            }
+        });
+
         return view;
     }
 }

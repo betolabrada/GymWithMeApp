@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_home_to_cameraXActivity"
             app:destination="@id/cameraXActivity" />
+        <action
+            android:id="@+id/action_nav_home_to_emailActivity"
+            app:destination="@id/emailActivity" />
     </fragment>
 
     <fragment
@@ -52,4 +55,9 @@
         android:name="com.itesm.gymwithme.ui.RoutineDetailFragment"
         android:label="@string/drawer_workout"
         tools:layout="@layout/fragment_routine_detail" />
+    <activity
+        android:id="@+id/emailActivity"
+        android:name="com.itesm.gymwithme.EmailActivity"
+        android:label="activity_email"
+        tools:layout="@layout/activity_email" />
 </navigation>
