@@ -29,7 +29,7 @@ public class QRScanWorkoutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button button = getActivity().findViewById(R.id.scan_button);
+        Button button = getActivity().findViewById(R.id.go_email_button);
         button.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), CameraXActivity.class);
             startActivity(intent);

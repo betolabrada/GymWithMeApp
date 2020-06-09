@@ -7,7 +7,7 @@
     tools:context=".ui.QRScanWorkoutFragment">
 
     <Button
-        android:id="@+id/scan_button"
+        android:id="@+id/go_email_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.707" />
 
     <TextView
-        android:id="@+id/scan_instructions_text"
+        android:id="@+id/email_instructions_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,7 +30,7 @@
         android:layout_marginBottom="32dp"
         android:text="@string/qr_instructions"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/scan_button"
+        app:layout_constraintBottom_toTopOf="@+id/go_email_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_marginBottom="32dp"
         android:contentDescription="@string/content_image_qr"
         android:src="@drawable/ic_qr_code"
-        app:layout_constraintBottom_toTopOf="@+id/scan_instructions_text"
+        app:layout_constraintBottom_toTopOf="@+id/email_instructions_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

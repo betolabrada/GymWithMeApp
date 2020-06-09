@@ -25,7 +25,11 @@
         android:id="@+id/nav_social"
         android:name="com.itesm.gymwithme.ui.SocialFragment"
         android:label="@string/menu_social"
-        tools:layout="@layout/fragment_social" />
+        tools:layout="@layout/fragment_social" >
+        <action
+            android:id="@+id/action_nav_social_to_emailActivity"
+            app:destination="@id/emailActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_qr_scan_workout"

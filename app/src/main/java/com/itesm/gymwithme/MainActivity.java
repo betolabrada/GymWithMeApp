@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navView = findViewById(R.id.nav_view);
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.action_nav_home_to_emailActivity, R.id.nav_qr_scan_workout, R.id.nav_routine_workout)
+                R.id.nav_home, R.id.nav_social, R.id.nav_qr_scan_workout, R.id.nav_routine_workout)
                 .setDrawerLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

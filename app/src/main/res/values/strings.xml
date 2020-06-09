@@ -70,5 +70,8 @@
     <string name="content_image_qr">This is a qr image</string>
     <string name="qr_instructions">With this feature, you can scan your local gym machine and automatically redirect you to a video instructor!</string>
     <string name="menu_workout">Workout</string>
+    <string name="content_image">Image</string>
+    <string name="email_instructions">Contact our coaches by sending them an email! This way you can obtain personal assistance, routines, tips, nutrition plans and more!</string>
+    <string name="email_now">Email Now</string>
 
 </resources>

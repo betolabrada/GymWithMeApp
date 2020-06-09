@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.itesm.gymwithme.R;
@@ -28,6 +29,7 @@ public class RoutineListFragment extends Fragment implements Callback<List<Routi
     private ArrayList<Routine> routines;
     private RecyclerView recyclerView;
     private RoutineAdapter adapter;
+    private ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +38,7 @@ public class RoutineListFragment extends Fragment implements Callback<List<Routi
         View view = inflater.inflate(R.layout.fragment_routine_list, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view);
+        progressBar = view.findViewById(R.id.progress_bar);
 
         RoutineManager.getAllRoutines(this);
 
@@ -46,9 +49,11 @@ public class RoutineListFragment extends Fragment implements Callback<List<Routi
     public void onResponse(Call<List<Routine>> call, Response<List<Routine>> response) {
         if (!response.isSuccessful()) {
             Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
             return;
         }
 
+        progressBar.setVisibility(View.GONE);
         routines = (ArrayList<Routine>) response.body();
         adapter = new RoutineAdapter(getContext(), routines);
         recyclerView.setAdapter(adapter);
@@ -57,6 +62,7 @@ public class RoutineListFragment extends Fragment implements Callback<List<Routi
 
     @Override
     public void onFailure(Call<List<Routine>> call, Throwable t) {
+        progressBar.setVisibility(View.GONE);
         Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
     }
 }

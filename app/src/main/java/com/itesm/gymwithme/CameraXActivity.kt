@@ -16,6 +16,7 @@ import androidx.camera.core.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
+import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode
 import java.util.concurrent.Executors
 
 class CameraXActivity: AppCompatActivity(), LifecycleOwner {
@@ -77,6 +78,12 @@ class CameraXActivity: AppCompatActivity(), LifecycleOwner {
         val qrCodeAnalyzer = QRCodeAnalyzer { qrCodes ->
             if (qrCodes.isNotEmpty()) {
                 CameraX.unbind(imageAnalysis)
+                val code = qrCodes[0]
+                if (code.valueType != FirebaseVisionBarcode.TYPE_URL) {
+                    Toast.makeText(this, "Not the type we are looking for!", Toast.LENGTH_LONG).show()
+                    finish()
+                    return@QRCodeAnalyzer
+                }
                 val title = qrCodes[0].url!!.title
                 val url = qrCodes[0].url!!.url
                 val url2 = url.toString()
