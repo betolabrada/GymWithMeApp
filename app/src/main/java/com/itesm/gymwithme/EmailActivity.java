@@ -44,4 +44,10 @@ public class EmailActivity extends AppCompatActivity {
         javaMailAPI.execute();
 
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        super.onBackPressed();
+        return true;
+    }
 }
